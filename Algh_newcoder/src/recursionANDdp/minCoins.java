@@ -4,7 +4,7 @@ public class minCoins {
 
 	/**
 	 * Elliott Su
-	 * 最少钱币数量：arr = [2,3,5],aim = 20
+	 * 最少钱币数量: arr = [2,3,5],aim = 20, arr中的数值为一种2元,3元,5元等类型的钱 
 	 * 未经过空间压缩之前，时间复杂度和空间复杂度都为O(N*aim)
 	 */
 	public static int minCoins(int[] arr, int aim) {
