@@ -51,6 +51,7 @@ public class LIS {
 	 * 同时在对dp数组进行更新时，使用相应的ends数组来进行
 	 * 时间复杂度为O(NLOG(N)),使用了二分查找  
 	 * */
+	
 	public static int[] getdp2(int[] arr) {
 		int[] dp = new int[arr.length];
 		int[] ends = new int[arr.length];
@@ -77,6 +78,7 @@ public class LIS {
 		}
 		return dp;
 	}
+	
 	// 将时间复杂度降为O(nlog(n))
 	public static int[] lis2(int[] arr) {
 		if (arr == null || arr.length == 0) {
@@ -85,12 +87,13 @@ public class LIS {
 		int[] dp = getdp2(arr);
 		return generateLIS(arr, dp);
 	}
+	
 	public static void main(String[] args) {
 		int[] arr = {2,1,5,3,6,4,8,9,7};
 		int[] res = lis2(arr);
 		for (int i = 0; i < res.length; i++) {
 			System.out.println(res[i]);
 		}
-	}
+	} 
 
 }
