@@ -42,6 +42,9 @@ public class PokerContinous {
 		System.out.println(isContinuous(arr1));
 		System.out.println(isContinuous(arr2));
 		System.out.println(isContinuous(arr3));
+		String a = "1.1.1.1";
+		String[] res = a.split("\\.");
+		System.out.println(res);
 	}
 
 }
