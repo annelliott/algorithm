@@ -14,7 +14,8 @@ public class MinValue {
         int right = n - 1;
         while (left <= right) {
 			int mid = left + (right - left) / 2;
-			if (arr[left] == arr[mid] && arr[mid] == arr[right]) {
+			// 若三个的值都相等,则进行遍历
+			if (arr[left] == arr[right]) {
 				res = arr[0];
 				for (int i = 0; i < n; i++) {
 					if (arr[i] < res) {
@@ -22,16 +23,18 @@ public class MinValue {
 					}
 				}
 				break;
-			} else if ((arr[left] <= arr[mid] && arr[mid] < arr[right]) 
-					|| (arr[left] < arr[mid] && arr[mid] <= arr[right])) {
+				// 如果左边的值小于右侧值,输出左侧的值,因为中间是有序的.
+			} else if ((arr[left] < arr[right])) {
 				res = arr[left];
 				break;
+				// 若最大值在【mid right】区间内，
 			} else if (arr[left] <= arr[mid] && arr[mid] > arr[right]) {
 				left = mid + 1;
+                // 若最大值在【left mid】区间内
 			} else {
-				mid = right;
-				left++;
-			}			
+				left = left + 1;
+				right = mid;
+			}
 		}
         return res;
     }
